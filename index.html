@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plantilla para validación de compras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    pre {
+      background: #fff;
+      padding: 1em;
+      border: 1px solid #ccc;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.6em 1.2em;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Plantilla para validación de compras</h2>
+
+  <pre id="mensaje">
+*Para poder validar tu compra, necesitamos que envíes lo siguiente:*
+
+> - Captura de pantalla del comprobante de compra.
+> - Debe verse completa, sin recortes. 
+> - Ejemplo: https://prnt.sc/BAlpJidoTiBs
+
+> - ID de transacción por escrito (formato: tbx-...)
+> - Ejemplo: `tbx-4649525a13106-db7124`
+
+> - Captura en F5 dentro del lobby del servidor, donde se vea claramente tu nick encima de tu cabeza.
+> - Si tu nick no es visible en F5, deberás escribir en el chat del juego el siguiente mensaje: **"HyCraft"**, y hacer la captura asegurándote de que el mensaje se vea claramente en pantalla.
+> - Ejemplo: https://prnt.sc/Entob2-UPcq3
+
+Requisitos para todas las capturas:
+
+> - Deben ser tomadas desde tu propia PC.
+> - Tienen que estar a ventana completa, sin ningún tipo de recorte ni censura.
+> - En todas debe ser visible la barra de tareas (En la de Minecraft no es del todo necesario. Pero sí debe verse la ScoreBoard con la IP del servidor, la fecha y tu nick).
+
+No se permiten ediciones, retoques ni modificaciones de ningún tipo.
+
+Importante: Cualquier captura que no cumpla con estos requisitos será automáticamente considerada inválida.
+Asegúrate de seguir todo al pie de la letra para evitar demoras en la validación.
+</pre>
+
+  <button onclick="copiarTexto()">Copiar mensaje</button>
+
+  <script>
+    function copiarTexto() {
+      const texto = document.getElementById("mensaje").innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        alert("¡Mensaje copiado al portapapeles!");
+      }, () => {
+        alert("Error al copiar el mensaje.");
+      });
+    }
+  </script>
+
+</body>
+</html>
